@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Installs and configures HAProxy on a server
+
+# Install HAProxy
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install haproxy
+
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
