@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Installs nginx web server
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo ufw allow 'Nginx HTTP'
+
+sudo rm /var/www/html/*.html
+sudo echo 'Hello World' | sudo tee /var/www/html/index.html
+sudo echo 'Ceci n'est pas une page' | sudo tee /var/www/html/404.html
+
+Old="^\tlocation / {"
+new="\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n\n\tlocation / {"
+sudo sed -i "s|$Old|$new|1" /etc/nginx/sites-available/default
+
+new="\terror_page 404 /404.html;\n\n\tlocation / {" 
+sudo sed -i "s|$Old|$new|1" /etc/nginx/sites-available/default
+
+sudo /etc/init.d/nginx restart
