@@ -1,1 +1,51 @@
-Blog Post Intro
+What happens when you type https://www.holbertonschool.com in your browser and press Enter???
+We all use the internet very often in our everyday life. How exactly does it work? Whats actually going on behind the scenes? Have you ever wondered what happens when you put in a URL in the web browser and press enter? Today we are going to go through some topics to understand exactly how it all works.
+What the heck is an IP address?
+Every computer connected to the internet has a unique IP (Internet protocol) address. There are two types of IP addresses in use currently the IPV4 and the IPV6. You probably have seen both form of IP addresses on your computer. The IPV4 has been around since January 1983, and is still the most common. These are 32-bit numbers expressed in four octets, separated in a so-called "dotted decimal" notation - for example: 198.123.44.145.
+By 1999, with the commercialization of internet access well underway, experts were concerned that the IANA could actually run out of valid IPv4 addresses. So, the Internet Engineering Task Force, engineered its successor, IPV6. These are 128-bit numbers, expressed in hexadecimal strings - for instance, 2001:0db8:582:ae33::29.
+What is DNS?
+Web browsers interact using Internet Protocol (IP) addresses. Each device connected to the Internet has a unique IP address that other computers can use to find it. For example 216.58.209.142 will open the google.com. DNS servers eliminate the need for humans to memorize long and complicated IP addresses like. The Domain Name System (DNS) is the telephone directory of the Internet. People access information online using domain names, such as google.com or yahoo.com rather than IP addresses. DNS translates domain names to IP addresses so that browsers can load Internet resources.
+TCP/IP Protocol
+The Transmission Control Protocol (TCP) is a transport protocol that is used on top of the Internet Protocol (IP) to ensure reliable packet transmission. TCP contains techniques for dealing with many of the issues associated with packet-based communications, such as missing packets, out-of-order packets, duplicate transmissions, and damaged packets.
+Because TCP is the most widely used protocol on top of IP, the Internet protocol stack is also known as TCP/IP. TCP allows applications to send (and receive) an ordered and error-checked stream of data packets over the network. When the browser gets the IP address, it will establish a connection between the browser and the server using the internet protocol, which is often the TCP/IP protocol.
+What exactly is HTTPS?
+HTTPS is the encrypted form of HTTP and stands for Hypertext Transfer Protocol Secure. It is used to communicate securely via the internet or a network. Transport Layer Security (TLS) or, earlier, Secure Sockets Layer (SSL) is used to encrypt the communication protocol (SSL). HTTPS guarantees data security over the network, particularly public networks such as Wi-Fi. HTTP, on the other hand, is not encrypted and is subject to eavesdropping attackers who can get access to website databases and critical information.
+When we enter a URL in a browser:
+1. The browser will check for caches in the following places one by one to find the corresponding IP address of the website.
+Browser cache -> OS cache ->Router cache ->ISP (Internet Service Provider) cache
+If not found in cache, ISP's (Internet Service Provider) DNS server initiates a DNS query to find IP address of server that hosts the domain name. These requests are sent using small data packets that contain information content of requests and IP addresses it is destined for.
+3. A TCP (Transfer Control Protocol) connection is established between the browser and server via synchronize(SYN) and acknowledge(ACK) messages.
+4. The web server receives an HTTP request from the browser. A GET or POST request is made to the server.
+5. The server on the host computer handles the request and responds. It generates a response in one of several formats, including JSON, XML, and HTML.
+6. Server sends out an HTTP response along with the status of response.
+7. Browser displays HTML content
+8. Finally, Done.
+Server Infrastructures
+When a request is submitted to a server, it will go through the firewall (must be verified first) and a load balancer in order to reach accessible servers, after which the web server will provide static data while the application server will serve dynamic data pulled from a database. We will go through each components one by one in detail:
+Load balancer
+Firewall
+Web server
+Application server and
+Database
+
+Load-balancer
+Load balancing is the technique of spreading a network over many servers. This guarantees that no single server is overburdened. Load balancing enhances application responsiveness by distributing tasks equally. It also improves the accessibility of programs and webpages for users.
+In this manner, a load balancer performs the following functions:
+Distributes client requests or network load efficiently across multiple servers
+Ensures high availability and reliability by sending requests only to servers that are online
+Provides the flexibility to add or subtract servers as demand dictates
+
+Different load balancing algorithms provide different benefits; the choice of load balancing method depends on your needs:
+Round Robin - Requests are distributed across the group of servers sequentially.
+Least Connections - A new request is sent to the server with the fewest current connections to clients. The relative computing capacity of each server is factored into determining which one has the least connections.
+Least Time - Sends requests to the server selected by a formula that combines the
+fastest response time and fewest active connections. Exclusive to NGINX Plus.
+
+Firewall
+A firewall is a system designed to prevent unauthorized access to or from a private network. It monitors incoming and outgoing network traffic and permits or blocks data packets based on a set of security rules. Its purpose is to establish a barrier between your internal network and incoming traffic in order to prevent malicious traffic like viruses and hackers.
+Web server
+At its most basic, web servers are pieces of software or hardware (or both) that store and distribute content to web browsers. A web server provides static material such as HTML pages, pictures, or plain text files, when queries reach servers. Web servers can also support SMTP (Simple Mail Transfer Protocol) and FTP (File Transfer Protocol) (File Transfer Protocol).
+Application server
+An application server runs behind a web Server and (almost always) in front of an SQL database. Application servers physically or virtually sit between database servers storing application data and web servers communicating with clients. App servers and akin middleware are the operating systems supporting an application's development and delivery. Whether it's a desktop, mobile, or web app, application servers play a critical role in connecting a world of devices.
+Database
+A database is a collection of structured information organized in a way that it can be easily accessed, managed, and updated by computer programs. It performs its work through Database Management Systems. MySQL, Oracle, SAP, IBM DB2, etc. are some well known Database Management System & Software. Every database server uses its own computer language or query language to executes the tasks. All these database server are capable of analyzing, storing and archiving the data.
